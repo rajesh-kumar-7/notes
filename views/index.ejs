@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="formbody">
+    <form class="form" action="submit" method="post">
+      <input class="title" type="text" name="title" placeholder=" enter title ">
+      <textarea class="textarea" name="description" placeholder="enter description" maxlength="100"> </textarea>
+      <input class="button" type="submit">
+    </form>
+  </div>
+  <div class="tasks">
+    <% console.log(files.length) %>
+      <% if(files.length> 0 ) { %>
+        <% files.forEach(function(val){%>
+          <div class="task">
+            <h1>
+              <%= val%>
+            </h1>
+            <a href="/files/<%=val%>"> read me </a>
+            <a href="/edit/<%=val%>"> edit</a>
+            <a href="/remove/<%=val%>"> remove</a>
+
+          </div>
+
+          <%})%>
+
+            <% } else {%>
+              <h1 class="nothing"> NO TASKS <h1>
+
+                  <%}%>
+
+
+
+
+  </div>
+</body>
+
+</html>
